@@ -5,20 +5,18 @@ server:
 spring:
   application:
     name: config-server
-
-  config:
-    activate:
-      on-profile: native
+  profiles:
+    active: git
 
   cloud:
     config:
       discovery:
         enabled: true
       server:
-        native:
-          search-locations: file:///C:/Users/in00/IdeaProjects/template/ms-config-properties/{application}/{profile}
-
-
+        git:
+          uri: https://github.com/Homval/TemplateEurekaExample
+          searchPaths: "/ms-config-properties/{application}/{profile}"
+          default-label: main
 
 eureka:
   client:
