@@ -18,7 +18,7 @@ public class ClientController {
         this.bookServiceFeignClient = bookServiceFeignClient;
     }
 
-    @GetMapping("/book")
+    @GetMapping("/books")
     public List<Book> getAllBooksFromClient() {
         return bookServiceFeignClient.getBooks();
     }
