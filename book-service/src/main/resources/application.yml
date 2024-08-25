@@ -3,6 +3,11 @@
 spring:
   application:
     name: book-service
+  sleuth:
+    sampler:
+      probability: 2.0
+  zipkin:
+    enabled: true
 
   config:
     import: "optional:configserver:"

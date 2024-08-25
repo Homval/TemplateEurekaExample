@@ -16,7 +16,7 @@ public class ClientController {
     @Value("${eureka.instance.instance-id}")
     String value;
 
-    private BookServiceFeignClient bookServiceFeignClient;
+    private final BookServiceFeignClient bookServiceFeignClient;
 
     public ClientController(BookServiceFeignClient bookServiceFeignClient) {
         this.bookServiceFeignClient = bookServiceFeignClient;

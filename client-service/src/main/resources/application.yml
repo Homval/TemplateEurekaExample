@@ -1,8 +1,14 @@
 
 
 spring:
+
   application:
     name: client-service
+  sleuth:
+    sampler:
+      probability: 2.0
+  zipkin:
+    enabled: true
 
   config:
     import: "optional:configserver:"
@@ -12,7 +18,9 @@ spring:
       discovery:
         enabled: true
         service-id: config-server
-
+    openfeign:
+      circuitbreaker:
+        enabled: true
 
 eureka:
   client:
